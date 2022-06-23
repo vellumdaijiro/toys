@@ -1,0 +1,78 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+main {
+    background: url("https://api.ixiaowai.cn/api/api.php") center center no-repeat fixed;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+#ClockComponents {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 2.5rem;
+    /* background: #fff; */
+    position: fixed;
+    bottom: 10%;
+    right: -2vh;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 15px;
+    width: 20vw;
+    overflow: hidden;
+    z-index: 1000;
+    border: solid 2px #fff5;
+    color: #fffd;
+}
+
+.calendars .week {
+    font-size: 1.5rem;
+    margin-left: 10%;
+}
+
+.calendars, 
+.clock {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: #0004;
+    padding: 0 10px;
+}
+.clock {
+    justify-content: flex-start;
+    font-size: 300%;
+}
+.calendars {
+    padding: 10px;
+}
+
+
+#ClockComponents::after {
+    content: "";
+    display: flex;
+    background: url("https://api.ixiaowai.cn/api/api.php") center center no-repeat fixed;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    filter: blur(15px);
+    margin: -50px;
+}
+
+@media screen and (orientation:portrait) {
+    #ClockComponents {
+        width: 50%;
+        font-size: 2rem;
+    }
+    #ClockComponents .clock {
+        font-size: 7rem;
+    }
+}

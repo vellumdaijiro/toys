@@ -1,0 +1,44 @@
+<!--
+    翻浏览器收藏夹的时候 翻到了之前收藏的随机图片api 想着可以做点什么
+    主要出于学习目的 以及自己用 
+    如果你有更好的想法 或者觉得我写的不好 随便改 随便折腾~
+    发布到创意工坊 记得标明一下原作者
+ -->
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>花里胡哨</title>
+    <link rel="stylesheet" href="./style/frame.css">
+</head>
+<body>
+    <!-- 随机图片api https://api.ixiaowai.cn/api/api.php -->
+
+    <main>
+        <div id="ClockComponents">
+            <div class="clock">
+                <div class="hour">23</div>
+                <span>:</span>
+                <div class="minutes">33</div>
+            </div>
+            <div class="calendars">
+                <div class="month"></div>
+                <div class="day"></div>
+                <div class="week"></div>
+            </div>
+        </div>
+    </main>
+    <script src="./scripts/Clock.js"></script>
+    <script>
+        let clockComponents = new ClockComponents("#ClockComponents")
+        clockComponents.putTime()
+        document.querySelector("#ClockComponents").style.width = document.querySelector("#ClockComponents > div.calendars > div.week").offsetLeft+document.querySelector("#ClockComponents > div.calendars > div.week").clientWidth + 100 + "px"
+        setInterval(() => {
+            clockComponents.putTime()
+        }, 1000);
+    </script>
+</body>
+</html>
